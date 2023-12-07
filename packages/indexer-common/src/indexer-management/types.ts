@@ -64,11 +64,11 @@ export const parseGraphQLSubgraphDeployment = (
   subgraphDeployment: any,
   protocolNetwork: string,
 ): SubgraphDeployment => ({
-  id: new SubgraphDeploymentID(subgraphDeployment.id),
-  deniedAt: subgraphDeployment.deniedAt,
-  stakedTokens: BigNumber.from(subgraphDeployment.stakedTokens),
-  signalledTokens: BigNumber.from(subgraphDeployment.signalledTokens),
-  queryFeesAmount: BigNumber.from(subgraphDeployment.queryFeesAmount),
+  id: new SubgraphDeploymentID(subgraphDeployment['id']),
+  deniedAt: subgraphDeployment['deniedAt'],
+  stakedTokens: BigNumber.from(subgraphDeployment['stakedTokens']),
+  signalledTokens: BigNumber.from(subgraphDeployment['signalledTokens']),
+  queryFeesAmount: BigNumber.from(subgraphDeployment['queryFeesAmount']),
   protocolNetwork,
 })
 

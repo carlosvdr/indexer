@@ -27,7 +27,7 @@ const testURL = async (
   url: string,
   tests: Test[],
 ): Promise<{ url: string; ok: boolean; tests: TestResult[] }> => {
-  const results = []
+  const results: TestResult[] = []
 
   for (const test of tests) {
     const cmd = test.test(url)
@@ -49,7 +49,7 @@ const testURL = async (
     }
   }
 
-  return { url, tests: results, ok: !results.find((result) => result.error !== null) }
+  return { url, tests: results, ok: !results.find((result) => result['error'] !== null) }
 }
 
 const URL_VALIDATION_TEST: Test = {

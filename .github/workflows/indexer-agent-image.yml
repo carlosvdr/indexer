@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       packages: write
 
@@ -38,6 +38,10 @@ jobs:
         uses: actions/setup-python@v4
           with:
             python-version: '3.11'
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 20
       - name: Build and push Indexer Agent image
         id: docker_build
         uses: docker/build-push-action@v2
